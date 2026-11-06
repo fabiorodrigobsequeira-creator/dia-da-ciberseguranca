@@ -216,7 +216,7 @@ details p { margin-top: 12px; color: var(--muted); }
 /* ===== BANNER DE COOKIES ===== */
 .cookie-banner {
     position: fixed;
-    bottom: -150px;
+    bottom: -200px;
     left: 0;
     width: 100%;
     background: var(--navy);
@@ -239,7 +239,7 @@ details p { margin-top: 12px; color: var(--muted); }
 .cookie-banner p {
     font-size: 0.95rem;
     margin: 0;
-    max-width: 850px;
+    max-width: 800px;
     color: #C9D1E0;
 }
 .cookie-banner a {
@@ -251,9 +251,24 @@ details p { margin-top: 12px; color: var(--muted); }
 .cookie-banner a:hover {
     color: #fff;
 }
+.cookie-buttons {
+    display: flex;
+    gap: 12px;
+}
 .cookie-banner .btn {
     padding: 10px 24px;
     white-space: nowrap;
+}
+/* Estilo específico para o botão de recusar */
+.btn-reject {
+    background: transparent;
+    color: #D1D5DB;
+    border: 2px solid #4A5265;
+}
+.btn-reject:hover {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    border-color: #fff;
 }
 
 /* ===== RESPONSIVO ===== */
@@ -274,6 +289,8 @@ details p { margin-top: 12px; color: var(--muted); }
     section.block { padding: 64px 0; }
     .hero { min-height: 480px; }
     .cookie-banner .container { flex-direction: column; text-align: center; }
+    .cookie-buttons { width: 100%; flex-direction: column; }
+    .cookie-buttons .btn { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 </style>
@@ -507,7 +524,10 @@ details p { margin-top: 12px; color: var(--muted); }
 <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite">
     <div class="container">
         <p>Este site utiliza cookies do Google Analytics para analisar o tráfego e otimizar a sua experiência de navegação. Ao continuar a navegar, concorda com a nossa utilização de cookies e com a <a href="https://ispgaya.pt/pt/legal/politica-de-privacidade" target="_blank">Política de Privacidade</a> do ISPGAYA.</p>
-        <button id="accept-cookies" class="btn btn-primary">Aceitar cookies</button>
+        <div class="cookie-buttons">
+            <button id="reject-cookies" class="btn btn-reject">Recusar e Sair</button>
+            <button id="accept-cookies" class="btn btn-primary">Aceitar cookies</button>
+        </div>
     </div>
 </div>
 
@@ -518,6 +538,7 @@ details p { margin-top: 12px; color: var(--muted); }
 document.addEventListener("DOMContentLoaded", function() {
     var banner = document.getElementById('cookie-banner');
     var acceptBtn = document.getElementById('accept-cookies');
+    var rejectBtn = document.getElementById('reject-cookies');
 
     if (!localStorage.getItem('cookies_aceites')) {
         setTimeout(function() {
@@ -525,9 +546,16 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 1000); // Aparece 1 segundo após o site carregar
     }
 
+    // Ação do Botão Aceitar
     acceptBtn.addEventListener('click', function() {
         localStorage.setItem('cookies_aceites', 'true');
         banner.classList.remove('show');
+    });
+
+    // Ação do Botão Recusar
+    rejectBtn.addEventListener('click', function() {
+        // Redireciona o utilizador para fora do site
+        window.location.href = "https://ispgaya.pt"; 
     });
 });
 
