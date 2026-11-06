@@ -14,570 +14,518 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dia da Cibersegurança | ISPGaya</title>
+<title>Dia da Cibersegurança | ISPGAYA</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-:root{
---primary:#003b7a;
---secondary:#005ca9;
---light:#f7f9fc;
---dark:#1d2939;
---white:#ffffff;
---shadow:0 8px 25px rgba(0,0,0,0.08);
+:root {
+    --primary: #E30613; /* Vermelho ISPGAYA */
+    --primary-dark: #B3040F; /* Vermelho escuro para hover */
+    --secondary: #1A1A1A; /* Cinza muito escuro/Preto */
+    --light: #F4F5F7; /* Fundo claro */
+    --dark: #2C3E50; /* Texto escuro */
+    --white: #ffffff;
+    --shadow: 0 4px 20px rgba(0,0,0,0.05);
+    --border-radius: 6px;
 }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-font-family:'Poppins',sans-serif;
-background:var(--light);
-color:var(--dark);
-line-height:1.7;
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    line-height: 1.7;
 }
 
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
 }
 
-header{
-background:white;
-position:sticky;
-top:0;
-z-index:1000;
-box-shadow:0 2px 10px rgba(0,0,0,.08);
+/* Header & Nav */
+header {
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    border-bottom: 3px solid var(--primary);
 }
 
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 0;
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
 }
 
-.logo{
-font-size:1.4rem;
-font-weight:700;
-color:var(--primary);
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.menu a{
-text-decoration:none;
-margin-left:25px;
-color:#444;
-font-weight:500;
+.logo span {
+    color: var(--primary);
 }
 
-.menu a:hover{
-color:var(--primary);
+.menu a {
+    text-decoration: none;
+    margin-left: 25px;
+    color: var(--secondary);
+    font-weight: 500;
+    transition: 0.3s ease;
+    font-size: 0.95rem;
 }
 
-.hero{
-background:
-linear-gradient(rgba(0,59,122,.88),
-rgba(0,59,122,.88)),
-url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80");
-background-size:cover;
-background-position:center;
-color:white;
-padding:120px 20px;
-text-align:center;
+.menu a:hover {
+    color: var(--primary);
 }
 
-.hero h1{
-font-size:3.4rem;
-margin-bottom:20px;
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)), 
+                url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 140px 20px;
+    text-align: center;
 }
 
-.hero p{
-max-width:850px;
-margin:auto;
-font-size:1.2rem;
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
-.btn{
-display:inline-block;
-margin-top:35px;
-background:white;
-color:var(--primary);
-padding:14px 30px;
-border-radius:8px;
-font-weight:600;
-text-decoration:none;
-transition:.3s;
+.hero p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 1.15rem;
+    color: #e0e0e0;
 }
 
-.btn:hover{
-transform:translateY(-3px);
+.btn {
+    display: inline-block;
+    margin-top: 40px;
+    background: var(--primary);
+    color: var(--white);
+    padding: 15px 35px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
 }
 
-section{
-padding:90px 0;
+.btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(227, 6, 19, 0.2);
 }
 
-.section-title{
-text-align:center;
-margin-bottom:50px;
+/* Sections Base */
+section {
+    padding: 90px 0;
 }
 
-.section-title h2{
-font-size:2.2rem;
-color:var(--primary);
-margin-bottom:10px;
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
 }
 
-.card{
-background:white;
-padding:35px;
-border-radius:14px;
-box-shadow:var(--shadow);
+.section-title h2 {
+    font-size: 2.2rem;
+    color: var(--secondary);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
 }
 
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
 }
 
-.stat{
-background:white;
-padding:30px;
-text-align:center;
-border-radius:14px;
-box-shadow:var(--shadow);
+/* Cards & Stats */
+.card, .stat, .topic, .program, .faq-item, .location {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
 }
 
-.stat h3{
-font-size:2rem;
-color:var(--primary);
-margin-bottom:10px;
+.card {
+    padding: 45px;
+    border-left: 5px solid var(--primary);
 }
 
-.topics{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
-.topic{
-background:white;
-padding:30px;
-border-radius:14px;
-box-shadow:var(--shadow);
-transition:.3s;
+.stat {
+    padding: 40px 20px;
+    text-align: center;
 }
 
-.topic:hover{
-transform:translateY(-6px);
+.stat h3 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 10px;
 }
 
-.topic h3{
-color:var(--primary);
-margin-bottom:15px;
+/* Topics */
+.topics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
-.program{
-background:white;
-border-radius:14px;
-overflow:hidden;
-box-shadow:var(--shadow);
+.topic {
+    padding: 35px;
+    transition: 0.3s;
+    border-top: 4px solid transparent;
 }
 
-table{
-width:100%;
-border-collapse:collapse;
+.topic:hover {
+    transform: translateY(-5px);
+    border-top: 4px solid var(--primary);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
-th{
-background:var(--primary);
-color:white;
-padding:18px;
+.topic h3 {
+    color: var(--secondary);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-td{
-padding:18px;
-border-bottom:1px solid #e8e8e8;
+/* Program Table */
+.program {
+    overflow: hidden;
 }
 
-.faq{
-display:grid;
-gap:20px;
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.faq-item{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:var(--shadow);
+th {
+    background: var(--secondary);
+    color: var(--white);
+    padding: 20px;
+    text-align: left;
+    font-weight: 600;
 }
 
-.location{
-background:white;
-padding:40px;
-border-radius:14px;
-box-shadow:var(--shadow);
-text-align:center;
+td {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    color: var(--dark);
 }
 
-.cta{
-background:var(--primary);
-color:white;
-text-align:center;
+tr:last-child td {
+    border-bottom: none;
 }
 
-.cta h2{
-font-size:2rem;
-margin-bottom:15px;
+tr:hover td {
+    background-color: #fcfcfc;
 }
 
-footer{
-background:#00264f;
-color:white;
-padding:35px;
-text-align:center;
+/* FAQ */
+.faq {
+    display: grid;
+    gap: 20px;
+    max-width: 800px;
+    margin: auto;
 }
 
-@media(max-width:768px){
-
-.hero h1{
-font-size:2.3rem;
+.faq-item {
+    padding: 25px 30px;
+    border-left: 4px solid var(--primary);
 }
 
-.hero p{
-font-size:1rem;
+.faq-item strong {
+    display: block;
+    color: var(--secondary);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
 }
 
-.menu{
-display:none;
+/* Location */
+.location {
+    padding: 50px;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
 }
 
+.location h3 {
+    color: var(--secondary);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
 }
 
+/* CTA */
+.cta {
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.cta h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.cta p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: auto;
+    opacity: 0.9;
+}
+
+/* Footer */
+footer {
+    background: var(--secondary);
+    color: #aaa;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 5px solid var(--primary);
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer strong {
+    color: var(--white);
+    font-size: 1.1rem;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+    .hero p { font-size: 1rem; }
+    .menu { display: none; }
+    .card, .stat, .topic, .location { padding: 25px; }
+    th, td { padding: 15px; }
+    .section-title h2 { font-size: 1.8rem; }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="container nav">
-
-<div class="logo">
-ISPGaya | Dia da Cibersegurança
-</div>
-
-<nav class="menu">
-<a href="#sobre">Sobre</a>
-<a href="#temas">Temas</a>
-<a href="#programa">Programa</a>
-<a href="#faq">FAQ</a>
-<a href="#local">Local</a>
-</nav>
-
-</div>
+    <div class="container nav">
+        <div class="logo">
+            <span>ISPGAYA</span> | Dia da Cibersegurança
+        </div>
+        <nav class="menu">
+            <a href="#sobre">Sobre</a>
+            <a href="#temas">Temas</a>
+            <a href="#programa">Programa</a>
+            <a href="#faq">FAQ</a>
+            <a href="#local">Local</a>
+        </nav>
+    </div>
 </header>
 
 <section class="hero">
-
-<div class="container">
-
-<h1>Dia da Cibersegurança</h1>
-
-<p>
-A cibersegurança não é apenas um problema tecnológico.
-É uma responsabilidade de todos.
-Descobre como ataques de phishing, engenharia social,
-fraudes digitais e conteúdos gerados por Inteligência Artificial
-afetam o nosso dia a dia.
-</p>
-
-<a href="#sobre" class="btn">
-Explorar Evento
-</a>
-
-</div>
-
+    <div class="container">
+        <h1>Dia da Cibersegurança</h1>
+        <p>A cibersegurança não é apenas um problema tecnológico. É uma responsabilidade de todos. Descobre como ataques de phishing, engenharia social, fraudes digitais e conteúdos gerados por Inteligência Artificial afetam o nosso dia a dia.</p>
+        <a href="#sobre" class="btn">Explorar Evento</a>
+    </div>
 </section>
 
 <section id="sobre">
-
-<div class="container">
-
-<div class="section-title">
-<h2>Porque Este Evento é Importante?</h2>
-</div>
-
-<div class="card">
-
-<p>
-Todos os dias utilizamos emails, redes sociais, aplicações móveis
-e plataformas online para estudar, trabalhar e comunicar.
-No entanto, muitos ataques informáticos deixam de explorar
-apenas vulnerabilidades técnicas e passam a explorar vulnerabilidades humanas.
-</p>
-
-<br>
-
-<p>
-Através de técnicas como phishing, engenharia social, falsificação
-de identidade e utilização maliciosa da Inteligência Artificial,
-os atacantes conseguem enganar utilizadores comuns e obter acesso
-a informações pessoais, académicas e profissionais.
-</p>
-
-<br>
-
-<p>
-O Dia da Cibersegurança pretende sensibilizar toda a comunidade
-académica para estes riscos e promover uma utilização mais segura
-e consciente da tecnologia.
-</p>
-
-</div>
-
-</div>
-
+    <div class="container">
+        <div class="section-title">
+            <h2>Porque Este Evento é Importante?</h2>
+        </div>
+        <div class="card">
+            <p>Todos os dias utilizamos emails, redes sociais, aplicações móveis e plataformas online para estudar, trabalhar e comunicar. No entanto, muitos ataques informáticos deixam de explorar apenas vulnerabilidades técnicas e passam a explorar vulnerabilidades humanas.</p>
+            <br>
+            <p>Através de técnicas como phishing, engenharia social, falsificação de identidade e utilização maliciosa da Inteligência Artificial, os atacantes conseguem enganar utilizadores comuns e obter acesso a informações pessoais, académicas e profissionais.</p>
+            <br>
+            <p>O Dia da Cibersegurança pretende sensibilizar toda a comunidade académica para estes riscos e promover uma utilização mais segura e consciente da tecnologia.</p>
+        </div>
+    </div>
 </section>
 
-<section>
-
-<div class="container">
-
-<div class="stats">
-
-<div class="stat">
-<h3>90%</h3>
-<p>Dos ataques começam através de erro humano.</p>
-</div>
-
-<div class="stat">
-<h3>24/7</h3>
-<p>Tentativas de fraude e phishing circulam diariamente.</p>
-</div>
-
-<div class="stat">
-<h3>100%</h3>
-<p>Todos os utilizadores podem ser alvo de um ataque.</p>
-</div>
-
-</div>
-
-</div>
-
+<section style="padding-top: 0;">
+    <div class="container">
+        <div class="stats">
+            <div class="stat">
+                <h3>90%</h3>
+                <p>Dos ataques começam através de erro humano.</p>
+            </div>
+            <div class="stat">
+                <h3>24/7</h3>
+                <p>Tentativas de fraude e phishing circulam diariamente.</p>
+            </div>
+            <div class="stat">
+                <h3>100%</h3>
+                <p>Todos os utilizadores podem ser alvo de um ataque.</p>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section id="temas">
-
-<div class="container">
-
-<div class="section-title">
-<h2>Temas em Destaque</h2>
-</div>
-
-<div class="topics">
-
-<div class="topic">
-<h3>🎣 Phishing</h3>
-<p>
-Como identificar emails, SMS e páginas falsas
-criadas para obter palavras-passe ou dados pessoais.
-</p>
-</div>
-
-<div class="topic">
-<h3>🕵️ Engenharia Social</h3>
-<p>
-Métodos utilizados para manipular comportamentos
-e obter informações através da confiança das pessoas.
-</p>
-</div>
-
-<div class="topic">
-<h3>📱 Segurança Digital</h3>
-<p>
-Boas práticas para proteção de dispositivos,
-contas online e redes sociais.
-</p>
-</div>
-
-<div class="topic">
-<h3>🤖 Inteligência Artificial</h3>
-<p>
-Deepfakes, burlas digitais e utilização da IA
-em ataques cada vez mais sofisticados.
-</p>
-</div>
-
-<div class="topic">
-<h3>🔐 Palavras-passe</h3>
-<p>
-Estratégias simples para aumentar a segurança
-das contas e informação pessoal.
-</p>
-</div>
-
-<div class="topic">
-<h3>📷 QR Codes Fraudulentos</h3>
-<p>
-Como identificar QR Codes falsos e evitar
-redirecionamentos para sites maliciosos.
-</p>
-</div>
-
-</div>
-
-</div>
-
+<section id="temas" style="background: var(--white);">
+    <div class="container">
+        <div class="section-title">
+            <h2>Temas em Destaque</h2>
+        </div>
+        <div class="topics">
+            <div class="topic">
+                <h3>🎣 Phishing</h3>
+                <p>Como identificar emails, SMS e páginas falsas criadas para obter palavras-passe ou dados pessoais.</p>
+            </div>
+            <div class="topic">
+                <h3>🕵️ Engenharia Social</h3>
+                <p>Métodos utilizados para manipular comportamentos e obter informações através da confiança das pessoas.</p>
+            </div>
+            <div class="topic">
+                <h3>📱 Segurança Digital</h3>
+                <p>Boas práticas para proteção de dispositivos, contas online e redes sociais.</p>
+            </div>
+            <div class="topic">
+                <h3>🤖 Inteligência Artificial</h3>
+                <p>Deepfakes, burlas digitais e utilização da IA em ataques cada vez mais sofisticados.</p>
+            </div>
+            <div class="topic">
+                <h3>🔐 Palavras-passe</h3>
+                <p>Estratégias simples para aumentar a segurança das contas e informação pessoal.</p>
+            </div>
+            <div class="topic">
+                <h3>📷 QR Codes Fraudulentos</h3>
+                <p>Como identificar QR Codes falsos e evitar redirecionamentos para sites maliciosos.</p>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section id="programa">
-
-<div class="container">
-
-<div class="section-title">
-<h2>Programa</h2>
-</div>
-
-<div class="program">
-
-<table>
-
-<tr>
-<th>Horário</th>
-<th>Atividade</th>
-</tr>
-
-<tr>
-<td>A anunciar</td>
-<td>Sessão de abertura</td>
-</tr>
-
-<tr>
-<td>A anunciar</td>
-<td>Phishing e fraude digital</td>
-</tr>
-
-<tr>
-<td>A anunciar</td>
-<td>Demonstração de engenharia social</td>
-</tr>
-
-<tr>
-<td>A anunciar</td>
-<td>Segurança nas redes sociais</td>
-</tr>
-
-<tr>
-<td>A anunciar</td>
-<td>Inteligência Artificial e Deepfakes</td>
-</tr>
-
-<tr>
-<td>A anunciar</td>
-<td>Mesa redonda e encerramento</td>
-</tr>
-
-</table>
-
-</div>
-
-</div>
-
+    <div class="container">
+        <div class="section-title">
+            <h2>Programa</h2>
+        </div>
+        <div class="program">
+            <table>
+                <tr>
+                    <th>Horário</th>
+                    <th>Atividade</th>
+                </tr>
+                <tr>
+                    <td>A anunciar</td>
+                    <td>Sessão de abertura</td>
+                </tr>
+                <tr>
+                    <td>A anunciar</td>
+                    <td>Phishing e fraude digital</td>
+                </tr>
+                <tr>
+                    <td>A anunciar</td>
+                    <td>Demonstração de engenharia social</td>
+                </tr>
+                <tr>
+                    <td>A anunciar</td>
+                    <td>Segurança nas redes sociais</td>
+                </tr>
+                <tr>
+                    <td>A anunciar</td>
+                    <td>Inteligência Artificial e Deepfakes</td>
+                </tr>
+                <tr>
+                    <td>A anunciar</td>
+                    <td>Mesa redonda e encerramento</td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </section>
 
-<section id="faq">
-
-<div class="container">
-
-<div class="section-title">
-<h2>Perguntas Frequentes</h2>
-</div>
-
-<div class="faq">
-
-<div class="faq-item">
-<strong>Preciso de conhecimentos técnicos?</strong>
-<p>Não. O evento foi pensado para toda a comunidade académica.</p>
-</div>
-
-<div class="faq-item">
-<strong>Quem pode participar?</strong>
-<p>Estudantes, docentes, colaboradores e visitantes.</p>
-</div>
-
-<div class="faq-item">
-<strong>Existe algum custo?</strong>
-<p>Não. A participação é gratuita.</p>
-</div>
-
-<div class="faq-item">
-<strong>É necessário efetuar inscrição?</strong>
-<p>Não. Basta comparecer no dia do evento.</p>
-</div>
-
-</div>
-
-</div>
-
+<section id="faq" style="background: var(--white);">
+    <div class="container">
+        <div class="section-title">
+            <h2>Perguntas Frequentes</h2>
+        </div>
+        <div class="faq">
+            <div class="faq-item">
+                <strong>Preciso de conhecimentos técnicos?</strong>
+                <p>Não. O evento foi pensado para toda a comunidade académica.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Quem pode participar?</strong>
+                <p>Estudantes, docentes, colaboradores e visitantes.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Existe algum custo?</strong>
+                <p>Não. A participação é gratuita.</p>
+            </div>
+            <div class="faq-item">
+                <strong>É necessário efetuar inscrição?</strong>
+                <p>Não. Basta comparecer no dia do evento.</p>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section id="local">
-
-<div class="container">
-
-<div class="section-title">
-<h2>Local</h2>
-</div>
-
-<div class="location">
-
-<h3>Instituto Superior Politécnico Gaya</h3>
-
-<p>
-O evento terá lugar nas instalações do ISPGaya.
-Mais informações sobre salas e horários serão disponibilizadas brevemente.
-</p>
-
-</div>
-
-</div>
-
+    <div class="container">
+        <div class="section-title">
+            <h2>Local</h2>
+        </div>
+        <div class="location">
+            <h3>Instituto Superior Politécnico Gaya</h3>
+            <p>O evento terá lugar nas instalações do ISPGAYA.<br>Mais informações sobre salas e horários serão disponibilizadas brevemente.</p>
+        </div>
+    </div>
 </section>
 
 <section class="cta">
-
-<div class="container">
-
-<h2>A Maior Vulnerabilidade Não É a Tecnologia. Somos Nós.</h2>
-
-<p>
-Aprenda a reconhecer ataques, proteger a sua informação
-e navegar de forma mais segura no mundo digital.
-</p>
-
-</div>
-
+    <div class="container">
+        <h2>A Maior Vulnerabilidade Não É a Tecnologia. Somos Nós.</h2>
+        <p>Aprenda a reconhecer ataques, proteger a sua informação e navegar de forma mais segura no mundo digital.</p>
+    </div>
 </section>
 
 <footer>
-
-<p><strong>ISPGaya</strong></p>
-
-<p>Dia da Cibersegurança</p>
-
-<p>Mestrado em Cibersegurança</p>
-
+    <p><strong>ISPGAYA</strong></p>
+    <p>Dia da Cibersegurança</p>
+    <p>Mestrado em Cibersegurança</p>
 </footer>
 
 </body>
