@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q7315VFSL"></script>
@@ -7,526 +7,511 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-8Q7315VFSL');
 </script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Dia da Cibersegurança | ISPGAYA</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* ===== CORES (tiradas das capturas do site do ISPGAYA) ===== */
 :root {
-    --primary: #E30613; /* Vermelho ISPGAYA */
-    --primary-dark: #B3040F; /* Vermelho escuro para hover */
-    --secondary: #1A1A1A; /* Cinza muito escuro/Preto */
-    --light: #F4F5F7; /* Fundo claro */
-    --dark: #2C3E50; /* Texto escuro */
-    --white: #ffffff;
-    --shadow: 0 4px 20px rgba(0,0,0,0.05);
-    --border-radius: 6px;
+    --brand: #F28C2B;        /* laranja do logótipo e dos números */
+    --brand-btn: #E07310;    /* laranja dos botões (mais escuro para o texto branco ler bem) */
+    --brand-dark: #C2410C;   /* laranja queimado: botões com contorno, datas */
+    --navy: #151B2B;         /* rodapé e secções escuras */
+    --navy-soft: #1F2740;
+    --ink: #1F2740;          /* texto e títulos */
+    --muted: #4A5265;
+    --line: #E3E6EC;
+    --bg: #FFFFFF;
+    --bg-soft: #F8F9FB;
+    --peach: #FDF3E8;        /* fundo dos cartões */
+    --serif: 'Lora', Georgia, 'Times New Roman', serif;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-    font-family: 'Poppins', sans-serif;
-    background: var(--light);
-    color: var(--dark);
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
     line-height: 1.7;
 }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+.container { width: 92%; max-width: 1200px; margin: 0 auto; }
+:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-}
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 10px; top: 10px; background: #fff; padding: 8px 14px; z-index: 2000; }
 
-/* Header & Nav */
-header {
-    background: var(--white);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-    border-bottom: 3px solid var(--primary);
-}
+/* ===== BARRA SUPERIOR ===== */
+.topbar { background: var(--navy); color: #C9D1E0; font-size: .8rem; }
+.topbar .container { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 8px 0; flex-wrap: wrap; }
+.topbar ul { list-style: none; display: flex; gap: 22px; flex-wrap: wrap; }
+.topbar a:hover { color: #fff; }
+.topbar-right { display: flex; align-items: center; gap: 22px; margin-left: auto; }
+.lang button { background: none; border: 0; color: inherit; font: inherit; cursor: pointer; padding: 2px 0; }
+.lang button + button { margin-left: 10px; }
+.lang button:hover { color: #fff; }
+.lang button.active { color: #fff; font-weight: 700; }
 
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-}
+/* Google Translate: esconder a barra e o widget, os botões PT/EN fazem o trabalho */
+#google_translate_element { display: none; }
+.goog-te-banner-frame, .skiptranslate > iframe, #goog-gt-tt, .goog-tooltip { display: none !important; }
+html, body { top: 0 !important; }
+.goog-text-highlight { background: none !important; box-shadow: none !important; }
 
-.logo {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--secondary);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+/* ===== CABEÇALHO ===== */
+header.main { background: #fff; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--line); }
+.nav { display: flex; justify-content: space-between; align-items: center; min-height: 84px; }
+.logo img { height: 46px; width: auto; }
+.logo .fallback { display: none; font-weight: 700; font-size: 1.8rem; letter-spacing: -1px; color: var(--brand); }
+.logo .fallback b { color: var(--brand); }
+.menu { display: flex; gap: 28px; list-style: none; }
+.menu a { font-size: .92rem; font-weight: 500; padding: 8px 0; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; }
+.menu a:hover { color: var(--brand); border-color: var(--brand); }
+.burger { display: none; background: none; border: 0; font-size: 1.6rem; cursor: pointer; color: var(--ink); }
 
-.logo span {
-    color: var(--primary);
-}
-
-.menu a {
-    text-decoration: none;
-    margin-left: 25px;
-    color: var(--secondary);
-    font-weight: 500;
-    transition: 0.3s ease;
-    font-size: 0.95rem;
-}
-
-.menu a:hover {
-    color: var(--primary);
-}
-
-/* Hero Section */
+/* ===== HERO ===== */
 .hero {
-    background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)), 
-                url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80");
-    background-size: cover;
-    background-position: center;
-    color: var(--white);
-    padding: 140px 20px;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-.hero p {
-    max-width: 800px;
-    margin: auto;
-    font-size: 1.15rem;
-    color: #e0e0e0;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 40px;
-    background: var(--primary);
-    color: var(--white);
-    padding: 15px 35px;
-    border-radius: var(--border-radius);
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s;
-    border: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background: var(--primary-dark);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(227, 6, 19, 0.2);
-}
-
-/* Sections Base */
-section {
-    padding: 90px 0;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-title h2 {
-    font-size: 2.2rem;
-    color: var(--secondary);
-    margin-bottom: 15px;
     position: relative;
-    display: inline-block;
-}
-
-.section-title h2::after {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 4px;
-    background: var(--primary);
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
-}
-
-/* Cards & Stats */
-.card, .stat, .topic, .program, .faq-item, .location {
-    background: var(--white);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-}
-
-.card {
-    padding: 45px;
-    border-left: 5px solid var(--primary);
-}
-
-.stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.stat {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.stat h3 {
-    font-size: 2.5rem;
-    color: var(--primary);
-    margin-bottom: 10px;
-}
-
-/* Topics */
-.topics {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.topic {
-    padding: 35px;
-    transition: 0.3s;
-    border-top: 4px solid transparent;
-}
-
-.topic:hover {
-    transform: translateY(-5px);
-    border-top: 4px solid var(--primary);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-
-.topic h3 {
-    color: var(--secondary);
-    margin-bottom: 15px;
-    font-size: 1.3rem;
+    min-height: 560px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    color: #fff;
+    background: var(--navy) url("https://ispgaya.pt/images/hero/estudar-no-ispagaya.webp") center/cover no-repeat;
 }
+.hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(21,27,43,.82) 0%, rgba(21,27,43,.55) 60%, rgba(21,27,43,.35) 100%); }
+.hero .container { position: relative; padding: 80px 0; }
+.hero h1 { font-family: var(--serif); font-size: clamp(2.3rem, 5vw, 3.8rem); font-weight: 600; line-height: 1.15; max-width: 720px; margin-bottom: 20px; }
+.hero p { max-width: 620px; font-size: 1.1rem; font-weight: 300; color: #E3E8F2; }
+.hero-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.btn { display: inline-block; padding: 14px 30px; border-radius: 4px; font-weight: 600; font-size: .95rem; border: 2px solid var(--brand-btn); transition: background .2s, color .2s, border-color .2s; }
+.btn-primary { background: var(--brand-btn); border-color: var(--brand-btn); color: #fff; }
+.btn-primary:hover { background: var(--brand-dark); border-color: var(--brand-dark); }
+.btn-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,.7); }
+.btn-outline:hover { background: #fff; color: var(--navy); border-color: #fff; }
 
-/* Program Table */
-.program {
-    overflow: hidden;
-}
+/* ===== DESTAQUES (data / local / entrada) ===== */
+.highlights { margin-top: -56px; position: relative; z-index: 5; }
+.highlights .grid { display: grid; grid-template-columns: repeat(3, 1fr); background: #fff; border-radius: 6px; box-shadow: 0 12px 32px rgba(21,27,43,.14); overflow: hidden; }
+.highlights article { padding: 30px 32px; border-top: 4px solid var(--brand); }
+.highlights article + article { border-left: 1px solid var(--line); }
+.highlights h2 { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
+.highlights p { color: var(--muted); font-size: .95rem; }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
+/* ===== SECÇÕES ===== */
+section.block { padding: 90px 0; }
+section.soft { background: var(--bg-soft); }
+section.soft .card { background: var(--peach); }
+.heading { margin-bottom: 44px; max-width: 680px; }
+.heading h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3.2vw, 2.5rem); font-weight: 600; line-height: 1.25; }
+.heading h2::after { content: ""; display: block; width: 56px; height: 4px; background: var(--brand); margin-top: 16px; }
+.heading p { margin-top: 18px; color: var(--muted); }
 
-th {
-    background: var(--secondary);
-    color: var(--white);
-    padding: 20px;
-    text-align: left;
-    font-weight: 600;
-}
+/* Sobre + números */
+.about { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: start; }
+.about-text p { margin-bottom: 16px; color: var(--muted); }
+.numbers { display: grid; gap: 8px; }
+.number { display: grid; grid-template-columns: 130px 1fr; gap: 20px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.number:last-child { border-bottom: 0; }
+.number strong { font-family: var(--serif); font-size: 2.8rem; line-height: 1; color: var(--brand); font-weight: 600; }
+.number span { color: var(--muted); }
 
-td {
-    padding: 20px;
-    border-bottom: 1px solid #eee;
-    color: var(--dark);
-}
+/* Temas */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.card { background: var(--peach); border: 0; border-radius: 4px; padding: 30px 28px; transition: box-shadow .25s, border-color .25s; }
+.card:hover { box-shadow: 0 10px 28px rgba(21,27,43,.10); }
+.card .icon { font-size: 1.8rem; line-height: 1; margin-bottom: 16px; }
+.card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+.card p { color: var(--muted); font-size: .95rem; }
 
-tr:last-child td {
-    border-bottom: none;
-}
-
-tr:hover td {
-    background-color: #fcfcfc;
-}
+/* Programa */
+.schedule { list-style: none; border-top: 1px solid var(--line); }
+.schedule li { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--line); align-items: center; }
+.schedule .time { color: var(--brand-dark); font-weight: 700; }
+.schedule .what { font-weight: 500; }
 
 /* FAQ */
-.faq {
-    display: grid;
-    gap: 20px;
-    max-width: 800px;
-    margin: auto;
-}
+.faq { max-width: 860px; }
+details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font-size: 1.5rem; color: var(--brand-dark); line-height: 1; }
+details[open] summary::after { content: "−"; }
+details p { margin-top: 12px; color: var(--muted); }
 
-.faq-item {
-    padding: 25px 30px;
-    border-left: 4px solid var(--primary);
-}
+/* Local */
+.location { background: var(--navy) url("https://ispgaya.pt/images/gaia-skyline.webp") bottom center/cover no-repeat; color: #fff; position: relative; }
+.location::before { content: ""; position: absolute; inset: 0; background: rgba(21,27,43,.88); }
+.location .container { position: relative; display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
+.location h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.25; margin-bottom: 18px; }
+.location p { color: #D5DCEA; }
+.location address { font-style: normal; background: rgba(255,255,255,.08); border-left: 4px solid var(--brand); padding: 26px 28px; border-radius: 4px; }
+.location address strong { display: block; margin-bottom: 6px; }
 
-.faq-item strong {
-    display: block;
-    color: var(--secondary);
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-}
+/* ===== RODAPÉ (réplica exata do ispgaya.pt: mesmas medidas do Tailwind) ===== */
+.ft { position: relative; z-index: 10; width: 100%; background: #151B26; color: #fff; font-size: 16px; line-height: 1.5; }
+.ft img { height: auto; }
+.ft a { color: inherit; text-decoration: none; }
+.ft ul { list-style: none; }
+.ft-sec { position: relative; z-index: 10; width: 100%; margin: 0 auto; padding: 64px 16px 32px; }
+@media (min-width: 640px)  { .ft-sec { max-width: 640px;  padding-left: 24px; padding-right: 24px; } }
+@media (min-width: 768px)  { .ft-sec { max-width: 768px; } }
+@media (min-width: 1024px) { .ft-sec { max-width: 1024px; } }
+@media (min-width: 1280px) { .ft-sec { max-width: 1280px; padding-left: 32px; padding-right: 32px; } }
+@media (min-width: 1536px) { .ft-sec { max-width: 1536px; } }
 
-/* Location */
-.location {
-    padding: 50px;
-    text-align: center;
-    max-width: 800px;
-    margin: auto;
-}
+.ft-grid { display: grid; gap: 16px; color: #fff; }
+@media (min-width: 768px) { .ft-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+.ft-col { margin-top: 16px; }
+.ft-col:first-child { margin-top: 0; }
+@media (min-width: 640px) { .ft-col { margin-top: 0; } }
 
-.location h3 {
-    color: var(--secondary);
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-}
+.ft-logo { display: block; width: 175px; height: auto; }
+.ft-h { font-weight: 700; font-size: 1.125rem; line-height: 1.75rem; }
+.ft-h.tight { margin-top: 20px; letter-spacing: -0.025em; }
+.ft-social { margin-top: 8px; display: flex; align-items: center; color: #fff; }
+.ft-social a { transition: opacity .15s; }
+.ft-social a + a { margin-left: 16px; }
+.ft-social a:hover { opacity: .8; }
+.ft-ico { display: block; width: 20px; height: 20px; }
+.ft-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
-/* CTA */
-.cta {
-    background: var(--primary);
-    color: var(--white);
-    text-align: center;
-    padding: 80px 20px;
-}
+.ft-list { margin-top: 16px; font-size: .875rem; line-height: 1.25rem; color: #D1D5DB; }
+.ft-list li + li { margin-top: 8px; }
+.ft-list li:hover { text-decoration: underline; text-underline-offset: 2px; }
 
-.cta h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    color: var(--white);
-}
+.ft address { margin-top: 16px; font-style: normal; }
+.ft address p { font-style: normal; }
+.ft address .b { font-weight: 700; }
+.ft address .tel { margin-top: 4px; color: #D1D5DB; }
+.ft address .note { display: inline-block; font-size: .75rem; line-height: 1rem; color: #9CA3AF; }
+.ft address .mail { color: #D1D5DB; }
+.ft-iso { margin-top: 20px; display: flex; }
+.ft-iso img { width: 62px; }
+.ft-iso img + img { margin-left: 16px; }
 
-.cta p {
-    font-size: 1.1rem;
-    max-width: 700px;
-    margin: auto;
-    opacity: 0.9;
+.ft-bottom { position: relative; margin: 48px auto 0; max-width: 1536px; padding: 0 16px; }
+@media (min-width: 640px)  { .ft-bottom { padding: 0 24px; } }
+@media (min-width: 1280px) { .ft-bottom { padding: 0 32px; } }
+.ft-bottom-in { padding-top: 24px; border-top: 1px solid rgba(255,255,255,.2); display: flex; flex-direction: column; font-size: .75rem; line-height: 1rem; color: #fff; }
+.ft-bottom-in .l span { display: block; }
+.ft-bottom-in .r { margin-top: 8px; }
+.ft-bottom-in .r a:hover { text-decoration: underline; text-underline-offset: 2px; }
+.ft-bottom-in .sep { display: inline; padding: 0 12px; }
+@media (min-width: 768px) {
+    .ft-bottom-in { flex-direction: row; align-items: center; justify-content: space-between; }
+    .ft-bottom-in .l span { display: inline; }
+    .ft-bottom-in .l span + span { margin-left: 16px; }
+    .ft-bottom-in .r { margin-top: 0; }
 }
+.ft-sky { position: absolute; bottom: 0; left: -48px; width: 795px; height: 140px; max-width: none; opacity: .1; pointer-events: none; }
 
-/* Footer */
-footer {
-    background: var(--secondary);
-    color: #aaa;
-    padding: 40px 20px;
-    text-align: center;
-    border-top: 5px solid var(--primary);
+/* ===== RESPONSIVO ===== */
+@media (max-width: 960px) {
+    .about { grid-template-columns: 1fr; }
+    .cards { grid-template-columns: repeat(2, 1fr); }
 }
-
-footer p {
-    margin: 5px 0;
+@media (max-width: 760px) {
+    .burger { display: block; }
+    .menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; flex-direction: column; gap: 0; padding: 10px 4%; border-bottom: 1px solid var(--line); box-shadow: 0 12px 24px rgba(0,0,0,.08); }
+    .menu.open { display: flex; }
+    .menu a { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .topbar .secondary { display: none; }
+    .highlights .grid { grid-template-columns: 1fr; }
+    .highlights article + article { border-left: 0; border-top: 1px solid var(--line); }
+    .cards { grid-template-columns: 1fr; }
+    .schedule li { grid-template-columns: 1fr; gap: 4px; }
+    section.block { padding: 64px 0; }
+    .hero { min-height: 480px; }
 }
-
-footer strong {
-    color: var(--white);
-    font-size: 1.1rem;
-}
-
-/* Responsive */
-@media(max-width: 768px) {
-    .hero h1 { font-size: 2.2rem; }
-    .hero p { font-size: 1rem; }
-    .menu { display: none; }
-    .card, .stat, .topic, .location { padding: 25px; }
-    th, td { padding: 15px; }
-    .section-title h2 { font-size: 1.8rem; }
-}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 </style>
 </head>
 
 <body>
+<a class="skip" href="#sobre">Saltar para o conteúdo</a>
 
-<header>
-    <div class="container nav">
-        <div class="logo">
-            <span>ISPGAYA</span> | Dia da Cibersegurança
+<div class="topbar">
+    <div class="container">
+        <div class="topbar-right">
+            <div class="lang notranslate" translate="no" role="group" aria-label="Idioma / Language">
+                <button type="button" data-lang="pt" aria-label="Português">PT</button>
+                <button type="button" data-lang="en" aria-label="English">EN</button>
+            </div>
         </div>
-        <nav class="menu">
-            <a href="#sobre">Sobre</a>
-            <a href="#temas">Temas</a>
-            <a href="#programa">Programa</a>
-            <a href="#faq">FAQ</a>
-            <a href="#local">Local</a>
-        </nav>
+    </div>
+</div>
+
+<header class="main">
+    <div class="container nav">
+        <a href="https://ispgaya.pt/pt" class="logo notranslate" translate="no" aria-label="ISPGAYA">
+            <img src="https://ispgaya.pt/images/logo/ispgaya-logo.svg" alt="ISPGAYA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <span class="fallback">ISP<b>GAYA</b></span>
+        </a>
+        <button class="burger" aria-label="Abrir menu" aria-expanded="false" onclick="var m=document.getElementById('menu');var o=m.classList.toggle('open');this.setAttribute('aria-expanded',o)">☰</button>
+        <ul class="menu" id="menu">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#temas">Temas</a></li>
+            <li><a href="#programa">Programa</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
     </div>
 </header>
 
 <section class="hero">
     <div class="container">
         <h1>Dia da Cibersegurança</h1>
-        <p>A cibersegurança não é apenas um problema tecnológico. É uma responsabilidade de todos. Descobre como ataques de phishing, engenharia social, fraudes digitais e conteúdos gerados por Inteligência Artificial afetam o nosso dia a dia.</p>
-        <a href="#sobre" class="btn">Explorar Evento</a>
-    </div>
-</section>
-
-<section id="sobre">
-    <div class="container">
-        <div class="section-title">
-            <h2>Porque Este Evento é Importante?</h2>
-        </div>
-        <div class="card">
-            <p>Todos os dias utilizamos emails, redes sociais, aplicações móveis e plataformas online para estudar, trabalhar e comunicar. No entanto, muitos ataques informáticos deixam de explorar apenas vulnerabilidades técnicas e passam a explorar vulnerabilidades humanas.</p>
-            <br>
-            <p>Através de técnicas como phishing, engenharia social, falsificação de identidade e utilização maliciosa da Inteligência Artificial, os atacantes conseguem enganar utilizadores comuns e obter acesso a informações pessoais, académicas e profissionais.</p>
-            <br>
-            <p>O Dia da Cibersegurança pretende sensibilizar toda a comunidade académica para estes riscos e promover uma utilização mais segura e consciente da tecnologia.</p>
+        <p>A cibersegurança não é apenas um problema tecnológico. É uma responsabilidade de todos. Descobre como ataques de phishing, engenharia social e fraudes digitais afetam o nosso dia a dia.</p>
+        <div class="hero-links">
+            <a href="#programa" class="btn btn-primary">Ver programa</a>
+            <a href="#sobre" class="btn btn-outline">Saber mais</a>
         </div>
     </div>
 </section>
 
-<section style="padding-top: 0;">
+<section class="highlights" aria-label="Informações do evento">
     <div class="container">
-        <div class="stats">
-            <div class="stat">
-                <h3>90%</h3>
-                <p>Dos ataques começam através de erro humano.</p>
-            </div>
-            <div class="stat">
-                <h3>24/7</h3>
-                <p>Tentativas de fraude e phishing circulam diariamente.</p>
-            </div>
-            <div class="stat">
-                <h3>100%</h3>
-                <p>Todos os utilizadores podem ser alvo de um ataque.</p>
-            </div>
+        <div class="grid">
+            <article>
+                <h2>Data e horário</h2>
+                <p>A anunciar</p>
+            </article>
+            <article>
+                <h2>Local</h2>
+                <p>ISPGAYA, Av. dos Descobrimentos, 333, Vila Nova de Gaia</p>
+            </article>
+            <article>
+                <h2>Participação</h2>
+                <p>Gratuita e sem inscrição prévia</p>
+            </article>
         </div>
     </div>
 </section>
 
-<section id="temas" style="background: var(--white);">
-    <div class="container">
-        <div class="section-title">
-            <h2>Temas em Destaque</h2>
+<section id="sobre" class="block">
+    <div class="container about">
+        <div>
+            <div class="heading">
+                <h2>Porque é que este evento é importante?</h2>
+            </div>
+            <div class="about-text">
+                <p>Todos os dias utilizamos emails, redes sociais, aplicações móveis e plataformas online para estudar, trabalhar e comunicar. No entanto, muitos ataques informáticos deixam de explorar apenas vulnerabilidades técnicas e passam a explorar vulnerabilidades humanas.</p>
+                <p>Através de técnicas como phishing, engenharia social, falsificação de identidade e utilização maliciosa da Inteligência Artificial, os atacantes conseguem enganar utilizadores comuns e obter acesso a informações pessoais, académicas e profissionais.</p>
+                <p>O Dia da Cibersegurança pretende sensibilizar toda a comunidade académica para estes riscos e promover uma utilização mais segura e consciente da tecnologia.</p>
+            </div>
         </div>
-        <div class="topics">
-            <div class="topic">
-                <h3>🎣 Phishing</h3>
-                <p>Como identificar emails, SMS e páginas falsas criadas para obter palavras-passe ou dados pessoais.</p>
-            </div>
-            <div class="topic">
-                <h3>🕵️ Engenharia Social</h3>
-                <p>Métodos utilizados para manipular comportamentos e obter informações através da confiança das pessoas.</p>
-            </div>
-            <div class="topic">
-                <h3>📱 Segurança Digital</h3>
-                <p>Boas práticas para proteção de dispositivos, contas online e redes sociais.</p>
-            </div>
-            <div class="topic">
-                <h3>🤖 Inteligência Artificial</h3>
-                <p>Deepfakes, burlas digitais e utilização da IA em ataques cada vez mais sofisticados.</p>
-            </div>
-            <div class="topic">
-                <h3>🔐 Palavras-passe</h3>
-                <p>Estratégias simples para aumentar a segurança das contas e informação pessoal.</p>
-            </div>
-            <div class="topic">
-                <h3>📷 QR Codes Fraudulentos</h3>
-                <p>Como identificar QR Codes falsos e evitar redirecionamentos para sites maliciosos.</p>
-            </div>
+        <div class="numbers">
+            <div class="number"><strong>90%</strong><span>Dos ataques começam através de erro humano.</span></div>
+            <div class="number"><strong>24/7</strong><span>Tentativas de fraude e phishing circulam diariamente.</span></div>
+            <div class="number"><strong>100%</strong><span>Todos os utilizadores podem ser alvo de um ataque.</span></div>
         </div>
     </div>
 </section>
 
-<section id="programa">
+<section id="temas" class="block soft">
     <div class="container">
-        <div class="section-title">
+        <div class="heading">
+            <h2>Temas em destaque</h2>
+            <p>Seis temas para perceberes como te podes proteger online.</p>
+        </div>
+        <div class="cards">
+            <div class="card"><div class="icon">🎣</div><h3>Phishing</h3><p>Como identificar emails, SMS e páginas falsas criadas para obter palavras-passe ou dados pessoais.</p></div>
+            <div class="card"><div class="icon">🕵️</div><h3>Engenharia Social</h3><p>Métodos utilizados para manipular comportamentos e obter informações através da confiança das pessoas.</p></div>
+            <div class="card"><div class="icon">📱</div><h3>Segurança Digital</h3><p>Boas práticas para proteção de dispositivos, contas online e redes sociais.</p></div>
+            <div class="card"><div class="icon">🤖</div><h3>Inteligência Artificial</h3><p>Deepfakes, burlas digitais e utilização da IA em ataques cada vez mais sofisticados.</p></div>
+            <div class="card"><div class="icon">🔐</div><h3>Palavras-passe</h3><p>Estratégias simples para aumentar a segurança das contas e informação pessoal.</p></div>
+            <div class="card"><div class="icon">📷</div><h3>QR Codes fraudulentos</h3><p>Como identificar QR Codes falsos e evitar redirecionamentos para sites maliciosos.</p></div>
+        </div>
+    </div>
+</section>
+
+<section id="programa" class="block">
+    <div class="container">
+        <div class="heading">
             <h2>Programa</h2>
+            <p>Os horários serão divulgados brevemente.</p>
         </div>
-        <div class="program">
-            <table>
-                <tr>
-                    <th>Horário</th>
-                    <th>Atividade</th>
-                </tr>
-                <tr>
-                    <td>A anunciar</td>
-                    <td>Sessão de abertura</td>
-                </tr>
-                <tr>
-                    <td>A anunciar</td>
-                    <td>Phishing e fraude digital</td>
-                </tr>
-                <tr>
-                    <td>A anunciar</td>
-                    <td>Demonstração de engenharia social</td>
-                </tr>
-                <tr>
-                    <td>A anunciar</td>
-                    <td>Segurança nas redes sociais</td>
-                </tr>
-                <tr>
-                    <td>A anunciar</td>
-                    <td>Inteligência Artificial e Deepfakes</td>
-                </tr>
-                <tr>
-                    <td>A anunciar</td>
-                    <td>Mesa redonda e encerramento</td>
-                </tr>
-            </table>
-        </div>
+        <ol class="schedule">
+            <li><span class="time">A anunciar</span><span class="what">Sessão de abertura</span></li>
+            <li><span class="time">A anunciar</span><span class="what">Phishing e fraude digital</span></li>
+            <li><span class="time">A anunciar</span><span class="what">Demonstração de engenharia social</span></li>
+            <li><span class="time">A anunciar</span><span class="what">Segurança nas redes sociais</span></li>
+            <li><span class="time">A anunciar</span><span class="what">Inteligência Artificial e Deepfakes</span></li>
+            <li><span class="time">A anunciar</span><span class="what">Mesa redonda e encerramento</span></li>
+        </ol>
     </div>
 </section>
 
-<section id="faq" style="background: var(--white);">
+<section id="faq" class="block soft">
     <div class="container">
-        <div class="section-title">
-            <h2>Perguntas Frequentes</h2>
+        <div class="heading">
+            <h2>Perguntas frequentes</h2>
         </div>
         <div class="faq">
-            <div class="faq-item">
-                <strong>Preciso de conhecimentos técnicos?</strong>
-                <p>Não. O evento foi pensado para toda a comunidade académica.</p>
-            </div>
-            <div class="faq-item">
-                <strong>Quem pode participar?</strong>
+            <details>
+                <summary>Preciso de conhecimentos técnicos?</summary>
+                <p>Não. O evento foi pensado para toda a comunidade académica, independentemente do curso.</p>
+            </details>
+            <details>
+                <summary>Quem pode participar?</summary>
                 <p>Estudantes, docentes, colaboradores e visitantes.</p>
-            </div>
-            <div class="faq-item">
-                <strong>Existe algum custo?</strong>
-                <p>Não. A participação é gratuita.</p>
-            </div>
-            <div class="faq-item">
-                <strong>É necessário efetuar inscrição?</strong>
-                <p>Não. Basta comparecer no dia do evento.</p>
-            </div>
+            </details>
+            <details>
+                <summary>Existe algum custo?</summary>
+                <p>Não. A participação é totalmente gratuita.</p>
+            </details>
+            <details>
+                <summary>É necessário efetuar inscrição?</summary>
+                <p>Não. Basta comparecer nas nossas instalações no dia do evento.</p>
+            </details>
         </div>
     </div>
 </section>
 
-<section id="local">
-    <div class="container">
-        <div class="section-title">
-            <h2>Local</h2>
-        </div>
-        <div class="location">
-            <h3>Instituto Superior Politécnico Gaya</h3>
-            <p>O evento terá lugar nas instalações do ISPGAYA.<br>Mais informações sobre salas e horários serão disponibilizadas brevemente.</p>
-        </div>
-    </div>
-</section>
+<footer class="ft">
+    <section class="ft-sec">
+        <div class="ft-grid">
+            <div class="ft-col">
+                <img class="ft-logo" width="175" height="54" src="https://ispgaya.pt/images/logo/ispgaya-logo-negative.svg" alt="ISPGAYA">
+                <p class="ft-h tight">Segue-nos</p>
+                <div class="ft-social">
+                    <a href="https://www.facebook.com/ispgaya" target="_blank" rel="noopener noreferrer"><span class="ft-sr">ISPGAYA Facebook</span><svg class="ft-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path></svg></a>
+                    <a href="https://www.instagram.com/ispgaya/" target="_blank" rel="noopener noreferrer"><span class="ft-sr">ISPGAYA Instagram</span><svg class="ft-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg></a>
+                    <a href="https://www.linkedin.com/school/ispgaya/" target="_blank" rel="noopener noreferrer"><span class="ft-sr">ISPGAYA LinkedIn</span><svg class="ft-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 0v24h24v-24h-24zm8 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.397-2.586 7-2.777 7 2.476v6.759z"></path></svg></a>
+                </div>
+            </div>
 
-<section class="cta">
-    <div class="container">
-        <h2>A Maior Vulnerabilidade Não É a Tecnologia. Somos Nós.</h2>
-        <p>Aprenda a reconhecer ataques, proteger a sua informação e navegar de forma mais segura no mundo digital.</p>
-    </div>
-</section>
+            <div class="ft-col">
+                <p class="ft-h">Ensino</p>
+                <ul class="ft-list">
+                    <li><a href="https://ispgaya.pt/pt/ensino/oferta-formativa/ctesp">CTeSP</a></li>
+                    <li><a href="https://ispgaya.pt/pt/ensino/oferta-formativa/licenciaturas">Licenciaturas</a></li>
+                    <li><a href="https://ispgaya.pt/pt/ensino/oferta-formativa/mestrados">Mestrados</a></li>
+                    <li><a href="https://ispgaya.pt/pt/ensino/programas-avancados/pos-graduacoes">Pós-Graduações</a></li>
+                    <li><a href="https://ispgaya.pt/pt/ensino/candidaturas">Candidaturas</a></li>
+                    <li><a href="https://ispgaya.pt/pt/ensino/bolsas-e-financiamento">Bolsas e Financiamento</a></li>
+                    <li><a href="https://ispgaya.pt/pt/ensino/programas-avancados">Programas Avançados</a></li>
+                </ul>
+            </div>
 
-<footer>
-    <p><strong>ISPGAYA</strong></p>
-    <p>Dia da Cibersegurança</p>
-    <p>Mestrado em Cibersegurança</p>
+            <div class="ft-col">
+                <p class="ft-h">ISPGAYA HUB</p>
+                <ul class="ft-list">
+                    <li><a href="https://inforestudante.ispgaya.pt/" target="_blank" rel="noopener noreferrer">Inforestudante</a></li>
+                    <li><a href="https://infordocente.ispgaya.pt/" target="_blank" rel="noopener noreferrer">Infordocente</a></li>
+                    <li><a href="https://www.office.com/?omkt=pt-pt" target="_blank" rel="noopener noreferrer">Email</a></li>
+                    <li><a href="https://ispgaya.pt/files/tutorial_configuracao_rede_wireless.pdf" target="_blank" rel="noopener noreferrer">Wi-Fi</a></li>
+                    <li><a href="https://password.ispgaya.pt/" target="_blank" rel="noopener noreferrer">Password</a></li>
+                    <li><a href="https://ispgaya.pt/pt/cartao-ispgaya">Cartão ISPGAYA</a></li>
+                    <li><a href="https://brand.ispgaya.pt" target="_blank" rel="noopener noreferrer">Identidade Visual</a></li>
+                </ul>
+            </div>
+
+            <div class="ft-col">
+                <p class="ft-h">Links de Interesse</p>
+                <ul class="ft-list">
+                    <li><a href="https://iesuperior.pt/" target="_blank" rel="noopener noreferrer">IES</a></li>
+                    <li><a href="https://www.a3es.pt/pt" target="_blank" rel="noopener noreferrer">A3ES</a></li>
+                    <li><a href="https://cienciavitae.pt" target="_blank" rel="noopener noreferrer">Ciência Vitae</a></li>
+                    <li><a href="https://www.portugal.gov.pt/" target="_blank" rel="noopener noreferrer">Governo de Portugal</a></li>
+                    <li><a href="https://ispgaya.pt/projetos-cofinanciados">Projetos Cofinanciados</a></li>
+                    <li><a href="https://ispgaya.pt/pt/repositorio-de-documentos">Repositório de Documentos</a></li>
+                </ul>
+            </div>
+
+            <div class="ft-col">
+                <div>
+                    <p class="ft-h">Contactos</p>
+                    <address>
+                        <p class="b">Av. dos Descobrimentos, 333</p>
+                        <p class="b">4400-103 Santa Marinha - V.N.Gaia</p>
+                        <p class="tel">(+351) 223 745 730 <span class="note">O valor da chamada corresponde ao valor de uma chamada para a rede fixa, em função do seu plano tarifário.</span></p>
+                        <p class="mail">info@ispgaya.pt</p>
+                    </address>
+                </div>
+                <div class="ft-iso">
+                    <img width="142" height="155" src="https://ispgaya.pt/images/logos/ISO-9001.svg" alt="ISO 9001">
+                    <img width="404" height="446" src="https://ispgaya.pt/images/logos/ISO-21001.svg" alt="ISO 21001">
+                    <img width="404" height="446" src="https://ispgaya.pt/images/logos/ISO-14001.svg" alt="ISO 14001">
+                </div>
+            </div>
+        </div>
+
+        <div class="ft-bottom">
+            <div class="ft-bottom-in">
+                <div class="l">
+                    <span>© 2026 Instituto Superior Politécnico Gaya</span>
+                    <span>Atualizado em 04/11/2026 - 17:59</span>
+                </div>
+                <div class="r">
+                    <a href="https://ispgaya.pt/pt/legal/termos-e-condicoes"> Termos e Condições </a><span class="sep">/</span><a href="https://ispgaya.pt/pt/legal/politica-de-privacidade"> Política de Privacidade </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <img class="ft-sky" width="795" height="140" src="https://ispgaya.pt/images/gaia-skyline.webp" alt="Vila Nova de Gaia">
 </footer>
+
+<div id="google_translate_element"></div>
+<script>
+/* Idiomas PT/EN com Google Translate.
+   O português é o idioma original da página. Ao escolher EN grava-se o cookie
+   "googtrans" que o Google Translate lê, e a página recarrega já traduzida. */
+(function () {
+    function currentLang() {
+        var m = document.cookie.match(/(?:^|;\s*)googtrans=\/pt\/([a-z-]+)/i);
+        return m ? m[1] : 'pt';
+    }
+    function clearCookie() {
+        var past = 'expires=Thu, 01 Jan 1970 00:00:00 GMT', h = location.hostname;
+        document.cookie = 'googtrans=; ' + past + '; path=/';
+        document.cookie = 'googtrans=; ' + past + '; path=/; domain=' + h;
+        document.cookie = 'googtrans=; ' + past + '; path=/; domain=.' + h;
+    }
+    function setLang(lang) {
+        clearCookie();
+        if (lang !== 'pt') {
+            var v = 'googtrans=/pt/' + lang + '; path=/';
+            document.cookie = v;
+            document.cookie = v + '; domain=' + location.hostname;
+        }
+        location.reload();
+    }
+
+    var active = currentLang();
+    document.querySelectorAll('.lang button').forEach(function (btn) {
+        var on = btn.getAttribute('data-lang') === active;
+        btn.classList.toggle('active', on);
+        btn.setAttribute('aria-pressed', on);
+        btn.addEventListener('click', function () {
+            var l = btn.getAttribute('data-lang');
+            if (l !== active) setLang(l);
+        });
+    });
+
+    /* Só carrega o Google Translate quando o idioma escolhido não é o português */
+    if (active !== 'pt') {
+        window.googleTranslateElementInit = function () {
+            new google.translate.TranslateElement({
+                pageLanguage: 'pt',
+                includedLanguages: 'en,pt',
+                autoDisplay: false
+            }, 'google_translate_element');
+        };
+        var g = document.createElement('script');
+        g.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        g.async = true;
+        document.head.appendChild(g);
+    }
+})();
+</script>
 
 </body>
 </html>
